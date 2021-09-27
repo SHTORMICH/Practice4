@@ -11,7 +11,15 @@ public class Part6 {
 
     public static void main(String[] args) {
         StringBuilder text = new StringBuilder();
-        text.append(reader("part6.txt"));
+        //text.append(reader("part6.txt"));
+        try (Scanner scannerFromTxt = new Scanner(new FileInputStream("part6.txt"), "Cp1251")) {
+            while (scannerFromTxt.hasNext()) {
+                text.append(scannerFromTxt.nextLine()).append(System.lineSeparator());
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        System.out.println(text);
         Scanner scannerFromConsole = new Scanner(System.in);
         String input = scannerFromConsole.nextLine();
         while (!input.equalsIgnoreCase("stop")) {
@@ -29,13 +37,14 @@ public class Part6 {
         } else if (input.equalsIgnoreCase("latn")) {
             p = Pattern.compile(REGEX_LATIN);
         } else {
-            return "Incorrect input";
+            return input + "Incorrect input";
         }
         Matcher m = p.matcher(text);
         while (m.find()) {
             result.append(m.group()).append(" ");
         }
-        return result.toString().trim();
+        result.append("\n");
+        return result.toString();
     }
 
     public static String reader(String path) {

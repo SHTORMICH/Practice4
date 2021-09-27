@@ -2,6 +2,7 @@ package com.epam.rd.java.basic.practice4;
 
 import java.io.*;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -10,7 +11,7 @@ public class Part4 {
 
     public static void main(String[] args) {
         StringBuilder text = new StringBuilder();
-        try (Scanner scannerFromTxt = new Scanner(new FileInputStream("part4.txt"), "UTF-8")) {
+        try (Scanner scannerFromTxt = new Scanner(new FileInputStream("part4.txt"), "Cp1251")) {
             while (scannerFromTxt.hasNext()) {
                 text.append(scannerFromTxt.nextLine()).append(System.lineSeparator());
             }
@@ -27,7 +28,6 @@ public class Part4 {
 }
 
 class AnIterableClass implements Iterable {
-
     String text;
 
     public AnIterableClass(String text) {
@@ -52,6 +52,9 @@ class AnIterableClass implements Iterable {
 
         @Override
         public Object next() {
+            if (m.group() == null) {
+                throw new NoSuchElementException();
+            }
             return m.group();
         }
 
