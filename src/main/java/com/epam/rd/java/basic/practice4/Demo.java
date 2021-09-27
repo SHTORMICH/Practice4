@@ -23,15 +23,14 @@ public class Demo {
         System.out.println("=========================== PART4");
         Part4.main(args);
 
-        /*System.out.println("=========================== PART5");
+        System.out.println("=========================== PART5");
         // set the mock input
         System.setIn(new ByteArrayInputStream(
                 "table ru^table en^apple ru^stop".replace("^", System.lineSeparator()).getBytes(StandardCharsets.UTF_8)));
         Part5.main(args);
-        // restore the standard input
-        System.setIn(STD_IN);
 
-        System.out.println("=========================== PART6");
+
+        /*System.out.println("=========================== PART6");
         // set the mock input
         System.setIn(new ByteArrayInputStream(
                 "Latn^Cyrl^asdf^latn^cyrl^stop".replace("^", System.lineSeparator()).getBytes(StandardCharsets.UTF_8)));

@@ -1,30 +1,29 @@
 package com.epam.rd.java.basic.practice4;
 
 import java.io.*;
-import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Part1 {
 
     public static void main(String[] args) {
-        StringBuilder text = new StringBuilder();
-        try (Scanner scannerFromTxt = new Scanner(new FileInputStream("part1.txt"), "UTF-8")) {
-            while (scannerFromTxt.hasNext()) {
-                text.append(scannerFromTxt.nextLine()).append(System.lineSeparator());
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
         StringBuilder result = new StringBuilder();
+        StringBuilder text = new StringBuilder();
+        text.append(reader("part1.txt"));
         String[] lines = text.toString().split(System.lineSeparator());
-        System.out.println();
+
         for (String line : lines) {
             String[] words = line.split(" ");
+
             for (int i = 0; i < words.length; i++) {
-                if (words[i].length() > 3) {
+                if (IsCyrillic(words[i]) && words[i].length() > 7) {
+                    result.append(words[i].substring(4));
+                } else if (!IsCyrillic(words[i]) && words[i].length() > 3) {
                     result.append(words[i].substring(2));
                 } else {
                     result.append(words[i]);
                 }
+
                 if (i != words.length - 1) {
                     result.append(" ");
                 }
@@ -34,22 +33,29 @@ public class Part1 {
         System.out.println(result);
 
     }
-}
-/*
- public static String reader(String path) {
+    public static String reader(String path) {
         File file = new File(path);
         StringBuilder builder = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))){
             String value = reader.readLine();
             while (value != null) {
-                builder.append(value);
+                builder.append(value).append(System.lineSeparator());
                 value = reader.readLine();
             }
         } catch (IOException e) {
             throw new RuntimeException("Can't read file", e);
         }
         return builder.toString();
-    }*/
+    }
+
+    public static boolean IsCyrillic(String word) {
+        Pattern p = Pattern.compile("\\p{IsCyrillic}");
+        Matcher m = p.matcher(word);
+        return m.find();
+    }
+}
+
+
 
 /*String text = Util.readFile(FILE_PATH);
          StringBuilder result = new StringBuilder(text);
@@ -61,4 +67,14 @@ public class Part1 {
             result.replace(m.start(), m.start() + 1, "");
             System.out.println(result);
         }
-        System.out.println(result);*/
+        System.out.println(result);
+
+        try (Scanner scannerFromTxt = new Scanner(new FileInputStream("part1.txt"), "UTF-8")) {
+            while (scannerFromTxt.hasNext()) {
+                text.append(scannerFromTxt.nextLine()).append(System.lineSeparator());
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        */

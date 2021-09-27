@@ -41,7 +41,7 @@ class AnIterableClass implements Iterable {
     }
 
     private class ImpIterator implements Iterator {
-        String regex = "\\b\\p{IsLatin}[^\\.]+\\.";
+        String regex = "\\b[\\p{IsCyrillic}|\\p{IsLatin}][^\\.]+\\.";
         Pattern p = Pattern.compile(regex);
         Matcher m = p.matcher(text);
 

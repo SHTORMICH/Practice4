@@ -1,24 +1,17 @@
 package com.epam.rd.java.basic.practice4;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Part6 {
-    private static final String REGEX_CYRIL = "[à-ÿ¸À-ß¨ºª¿¯]+";
+    private static final String REGEX_CYRIL = "\\p{IsCyrillic}+";
     private static final String REGEX_LATIN = "[a-zA-Z]+";
 
     public static void main(String[] args) {
         StringBuilder text = new StringBuilder();
-        try (Scanner scannerFromTxt = new Scanner(new FileInputStream("part6.txt"), "UTF-8")) {
-            while (scannerFromTxt.hasNext()) {
-                text.append(scannerFromTxt.nextLine()).append(System.lineSeparator());
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        text.append(reader("part6.txt"));
         Scanner scannerFromConsole = new Scanner(System.in);
         String input = scannerFromConsole.nextLine();
         while (!input.equalsIgnoreCase("stop")) {
@@ -43,6 +36,21 @@ public class Part6 {
             result.append(m.group()).append(" ");
         }
         return result.toString().trim();
+    }
+
+    public static String reader(String path) {
+        File file = new File(path);
+        StringBuilder builder = new StringBuilder();
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))){
+            String value = reader.readLine();
+            while (value != null) {
+                builder.append(value).append(System.lineSeparator());
+                value = reader.readLine();
+            }
+        } catch (IOException e) {
+            throw new RuntimeException("Can't read file", e);
+        }
+        return builder.toString();
     }
 
 }
