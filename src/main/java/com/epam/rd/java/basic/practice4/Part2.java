@@ -26,7 +26,6 @@ public class Part2 {
         System.out.println(result
                 .append("input ==>")
                 .append(reader("part2.txt"))
-                .append(" ")
                 .append(System.lineSeparator())
                 .append("output ==>")
                 .append(reader("part2_sorted.txt")));

@@ -13,7 +13,7 @@ public class Part6 {
         Scanner scannerFromConsole = new Scanner(System.in);
         String input = scannerFromConsole.nextLine();
         while (!input.equalsIgnoreCase("stop")) {
-            System.out.print(sorted(input, text.toString()));
+            System.out.println(sorted(input, text.toString()));
             input = scannerFromConsole.nextLine();
         }
     }
@@ -31,15 +31,13 @@ public class Part6 {
                     resultLatin.append(word).append(" ");
                 }
             }
-            resultCyrillic.append(System.lineSeparator());
-            resultLatin.append(System.lineSeparator());
         }
         if (input.equalsIgnoreCase("cyrl")) {
-            return resultCyrillic.toString().replaceAll("(?m)^\\s*$[\\n\\r]+", "");
+            return resultCyrillic.toString().replaceAll("\\.", "");
         } else if (input.equalsIgnoreCase("latn")) {
-            return resultLatin.toString().replaceAll("(?m)^\\s*$[\\n\\r]+", "");
+            return resultLatin.toString().replaceAll("\\.", "");
         } else {
-            return input + " Incorrect input\n";
+            return input + ": Incorrect input\n";
         }
     }
 
@@ -65,7 +63,9 @@ public class Part6 {
     }
 
 }
-/* try (Scanner scannerFromTxt = new Scanner(new FileInputStream("part6.txt"), "Cp1251")) {
+/*
+.replaceAll("(?m)^\\s*$[\\n\\r]+", "")
+try (Scanner scannerFromTxt = new Scanner(new FileInputStream("part6.txt"), "Cp1251")) {
             while (scannerFromTxt.hasNext()) {
                 text.append(scannerFromTxt.nextLine()).append(System.lineSeparator());
             }

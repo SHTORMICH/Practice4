@@ -21,14 +21,13 @@ public class Part1 {
                 } else {
                     result.append(words[i]);
                 }
-
                 if (i != words.length - 1) {
                     result.append(" ");
                 }
             }
             result.append(System.lineSeparator());
         }
-        System.out.println(result);
+        System.out.print(result);
 
     }
     public static String reader(String path) {
