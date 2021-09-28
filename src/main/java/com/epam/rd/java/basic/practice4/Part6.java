@@ -25,9 +25,9 @@ public class Part6 {
         for (String line : lines) {
             String[] words = line.split(" ");
             for (String word : words) {
-                if (IsCyrillic(word)) {
+                if (isCyrillic(word)) {
                     resultCyrillic.append(word).append(" ");
-                } else if (!IsCyrillic(word)) {
+                } else if (!isCyrillic(word)) {
                     resultLatin.append(word).append(" ");
                 }
             }
@@ -37,11 +37,11 @@ public class Part6 {
         } else if (input.equalsIgnoreCase("latn")) {
             return resultLatin.toString().replaceAll("\\.", "");
         } else {
-            return input + ": Incorrect input\n";
+            return input + ": Incorrect input";
         }
     }
 
-    public static boolean IsCyrillic(String word) {
+    public static boolean isCyrillic(String word) {
         Pattern p = Pattern.compile("\\p{IsCyrillic}");
         Matcher m = p.matcher(word);
         return m.find();

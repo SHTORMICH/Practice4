@@ -31,7 +31,7 @@ public class Part2 {
                 .append(reader("part2_sorted.txt")));
     }
 
-    public static File writeToFile(String path, int[] randomNubs) {
+    public static void writeToFile(String path, int[] randomNubs) {
         File numbers = new File(path);
         try (PrintWriter file = new PrintWriter(numbers)){
             for (int el : randomNubs) {
@@ -40,7 +40,6 @@ public class Part2 {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        return numbers;
     }
 
     public static String reader(String path) {

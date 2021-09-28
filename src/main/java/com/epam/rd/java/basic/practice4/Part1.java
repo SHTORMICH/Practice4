@@ -1,10 +1,14 @@
 package com.epam.rd.java.basic.practice4;
 
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Part1 {
+
+    private static final Logger logger = Logger.getLogger(Part1.class.getName());
 
     public static void main(String[] args) {
         StringBuilder result = new StringBuilder();
@@ -14,9 +18,9 @@ public class Part1 {
             String[] words = line.split(" ");
 
             for (int i = 0; i < words.length; i++) {
-                if (IsCyrillic(words[i]) && words[i].length() > 7) {
+                if (isCyrillic(words[i]) && words[i].length() > 7) {
                     result.append(words[i].substring(4));
-                } else if (!IsCyrillic(words[i]) && words[i].length() > 3) {
+                } else if (!isCyrillic(words[i]) && words[i].length() > 3) {
                     result.append(words[i].substring(2));
                 } else {
                     result.append(words[i]);
@@ -27,9 +31,9 @@ public class Part1 {
             }
             result.append(System.lineSeparator());
         }
-        System.out.print(result);
-
+        logger.log(Level.INFO, result.toString());
     }
+
     public static String reader(String path) {
         File file = new File(path);
         StringBuilder builder = new StringBuilder();
@@ -45,7 +49,7 @@ public class Part1 {
         return builder.toString();
     }
 
-    public static boolean IsCyrillic(String word) {
+    public static boolean isCyrillic(String word) {
         Pattern p = Pattern.compile("\\p{IsCyrillic}");
         Matcher m = p.matcher(word);
         return m.find();
