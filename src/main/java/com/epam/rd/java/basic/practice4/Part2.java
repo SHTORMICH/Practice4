@@ -1,8 +1,12 @@
 package com.epam.rd.java.basic.practice4;
 
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Part2 {
+
+    private static final Logger logger = Logger.getLogger(Part2.class.getName());
 
     public static void main(String[] args) {
         int[] randomNubs = new int[10];
@@ -23,12 +27,13 @@ public class Part2 {
             }
         }
         writeToFile("part2_sorted.txt", randomNubs);
-        System.out.println(result
-                .append("input ==>")
+        result.append("input ==>")
                 .append(reader("part2.txt"))
                 .append(System.lineSeparator())
                 .append("output ==>")
-                .append(reader("part2_sorted.txt")));
+                .append(reader("part2_sorted.txt"));
+        System.out.println(result);
+        logger.log(Level.INFO, result.toString());
     }
 
     public static void writeToFile(String path, int[] randomNubs) {
@@ -38,7 +43,7 @@ public class Part2 {
                 file.printf(" %s", el);
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            logger.warning(e.getMessage());
         }
     }
 

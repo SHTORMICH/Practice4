@@ -2,14 +2,17 @@ package com.epam.rd.java.basic.practice4;
 
 import java.io.*;
 import java.util.Scanner;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Part6 {
 
+    private static final Logger logger = Logger.getLogger(Part6.class.getName());
+
     public static void main(String[] args) {
         StringBuilder text = new StringBuilder();
-        text.append(reader("part6.txt"));
+        text.append(readerFile("part6.txt"));
         Scanner scannerFromConsole = new Scanner(System.in);
         String input = scannerFromConsole.nextLine();
         while (!input.equalsIgnoreCase("stop")) {
@@ -49,7 +52,7 @@ public class Part6 {
         return m.find();
     }
 
-    public static String reader(String path) {
+    public static String readerFile(String path) {
         File file = new File(path);
         StringBuilder builder = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))){
@@ -59,7 +62,7 @@ public class Part6 {
                 value = reader.readLine();
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.warning(e.getMessage());
         }
         return builder.toString();
     }

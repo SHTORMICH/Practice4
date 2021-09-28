@@ -45,7 +45,7 @@ public class Part1 {
                 value = reader.readLine();
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.warning(e.getMessage());
         }
         return builder.toString();
     }

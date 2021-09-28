@@ -4,10 +4,13 @@ import java.io.*;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Part4 {
+
+    private static final Logger logger = Logger.getLogger(Part4.class.getName());
 
     public static void main(String[] args) {
         StringBuilder text = new StringBuilder();
@@ -16,7 +19,7 @@ public class Part4 {
                 text.append(scannerFromTxt.nextLine()).append(System.lineSeparator());
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            logger.warning(e.getMessage());
         }
         AnIterableClass c = new AnIterableClass(text.toString());
 

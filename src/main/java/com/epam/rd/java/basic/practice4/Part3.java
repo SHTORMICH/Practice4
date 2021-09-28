@@ -2,6 +2,7 @@ package com.epam.rd.java.basic.practice4;
 
 import java.io.*;
 import java.util.Scanner;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -12,10 +13,11 @@ public class Part3 {
     public static final String REGEX_INT = "(?<![.\\d])\\d+(?![.\\d])";
     public static final String REGEX_DOUBLE = "-?\\d*\\.\\d+";
     public static final String REGEX_STRING = "(^|\\s)([a-zA-Z\\p{IsCyrillic}]{2,})(?=\\s|\\n$)";
+    private static final Logger logger = Logger.getLogger(Part3.class.getName());
 
     public static void main(String[] args) {
         StringBuilder text = new StringBuilder();
-        text.append(reader("part3.txt"));
+        text.append(readerFil("part3.txt"));
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         while (!input.equalsIgnoreCase("stop")) {
@@ -44,7 +46,7 @@ public class Part3 {
         return result.toString().trim();
     }
 
-    public static String reader(String path) {
+    public static String readerFil(String path) {
         File file = new File(path);
         StringBuilder builder = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))){
@@ -54,7 +56,7 @@ public class Part3 {
                 value = reader.readLine();
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.warning(e.getMessage());
         }
         return builder.toString();
     }
