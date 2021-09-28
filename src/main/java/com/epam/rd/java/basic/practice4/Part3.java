@@ -39,7 +39,6 @@ public class Part3 {
         Pattern p = Pattern.compile(regex);
         Matcher m = p.matcher(text);
         while (m.find()) {
-            System.out.println(m.group());
             result.append(m.group()).append(" ");
         }
         return result.toString().trim();

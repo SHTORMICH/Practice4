@@ -31,6 +31,7 @@ public class Part1 {
             }
             result.append(System.lineSeparator());
         }
+        System.out.println(result);
         logger.log(Level.INFO, result.toString());
     }
 

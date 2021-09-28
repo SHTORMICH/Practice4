@@ -21,7 +21,9 @@ public class Part6 {
     public static String sorted (String input, String text) {
         String[] lines = text.split(System.lineSeparator());
         StringBuilder resultCyrillic = new StringBuilder();
+        resultCyrillic.append("Cyrl: ");
         StringBuilder resultLatin = new StringBuilder();
+        resultLatin.append("Latn: ");
         for (String line : lines) {
             String[] words = line.split(" ");
             for (String word : words) {
