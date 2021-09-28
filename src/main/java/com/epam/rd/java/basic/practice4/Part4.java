@@ -20,14 +20,13 @@ public class Part4 {
         }
         AnIterableClass c = new AnIterableClass(text.toString());
 
-        Iterator iterator = c.iterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next().toString().replaceAll("\\s+", " "));
+        for (Object o : c) {
+            System.out.println(o.toString().replaceAll("\\s+", " "));
         }
     }
 }
 
-class AnIterableClass implements Iterable {
+class AnIterableClass implements Iterable<Object> {
     String text;
 
     public AnIterableClass(String text) {
@@ -35,13 +34,13 @@ class AnIterableClass implements Iterable {
     }
 
     @Override
-    public Iterator iterator() {
+    public Iterator<Object> iterator() {
 
         return new ImpIterator();
     }
 
-    private class ImpIterator implements Iterator {
-        String regex = "\\b[\\p{IsCyrillic}|\\p{IsLatin}][^\\.]+\\.";
+    private class ImpIterator implements Iterator<Object> {
+        String regex = "\\b[\\p{IsCyrillic}|\\p{IsLatin}][^.]+\\.";
         Pattern p = Pattern.compile(regex);
         Matcher m = p.matcher(text);
 

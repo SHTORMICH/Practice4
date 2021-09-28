@@ -26,7 +26,9 @@ public class Part2 {
         System.out.println(result
                 .append("input ==>")
                 .append(reader("part2.txt"))
-                .append(" ").append("output ==>")
+                .append(" ")
+                .append(System.lineSeparator())
+                .append("output ==>")
                 .append(reader("part2_sorted.txt")));
     }
 
@@ -52,7 +54,7 @@ public class Part2 {
                 value = reader.readLine();
             }
         } catch (IOException e) {
-            throw new RuntimeException("Can't read file", e);
+            e.printStackTrace();
         }
         return builder.toString();
     }

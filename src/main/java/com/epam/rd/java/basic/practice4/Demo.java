@@ -17,8 +17,6 @@ public class Demo {
         System.setIn(new ByteArrayInputStream(
                 "char^String^int^double^stop".replace("^", System.lineSeparator()).getBytes(StandardCharsets.UTF_8)));
         Part3.main(args);
-        // restore the standard input
-        //System.setIn(args);
 
         System.out.println("=========================== PART4");
         Part4.main(args);
@@ -30,13 +28,11 @@ public class Demo {
         Part5.main(args);
 
 
-        /*System.out.println("=========================== PART6");
+        System.out.println("=========================== PART6");
         // set the mock input
         System.setIn(new ByteArrayInputStream(
                 "Latn^Cyrl^asdf^latn^cyrl^stop".replace("^", System.lineSeparator()).getBytes(StandardCharsets.UTF_8)));
         Part6.main(args);
-        // restore the standard input
-        System.setIn(STD_IN);*/
 
     }
 

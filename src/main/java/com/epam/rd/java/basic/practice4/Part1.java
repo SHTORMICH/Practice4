@@ -8,9 +8,7 @@ public class Part1 {
 
     public static void main(String[] args) {
         StringBuilder result = new StringBuilder();
-        StringBuilder text = new StringBuilder();
-        text.append(reader("part1.txt"));
-        String[] lines = text.toString().split(System.lineSeparator());
+        String[] lines = reader("part1.txt").split(System.lineSeparator());
 
         for (String line : lines) {
             String[] words = line.split(" ");
@@ -43,7 +41,7 @@ public class Part1 {
                 value = reader.readLine();
             }
         } catch (IOException e) {
-            throw new RuntimeException("Can't read file", e);
+            e.printStackTrace();
         }
         return builder.toString();
     }

@@ -1,11 +1,11 @@
 
 
-Practical task â„–4
+Practical task ¹4
 _______________________
 
 
 Notes.
-1. If the application reads data from a file, you need to specify the same encoding using which the data is stored. Use encoding Ğ¡Ñ€1251.
+1. If the application reads data from a file, you need to specify the same encoding using which the data is stored. Use encoding Ñğ1251.
 2. If the language of the text information is not indicated specifically, choose a text that can contain both Cyrillic (Russian and Ukrainian) and Latin letters (English).
 3. Create Demo class in the root package that demonstrates the actions of all the written functionality.
 4. The names of the input and output files are relative to the value of user.dir ( = the root directory of the project) system property.
@@ -16,12 +16,12 @@ _______________________
 
 Task 1
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+———————————————————————————————-
 
 Class name: com.epam.rd.java.basic.practice4.Part1
 The input data should be uploaded from the 'part1.txt' file
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+———————————————————————————————-
 
 
 Create a class that displays the content of the text file to console, deleting the first two characters of each word with the length of 4 and more characters (example: original 'qwerty', new 'erty').
@@ -32,13 +32,13 @@ _______________________
 
 Task 2
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+———————————————————————————————-
 
 Class name: com.epam.rd.java.basic.practice4.Part2
 The input data should be uploaded from the 'part2.txt' file
 The output data should be uploaded to the 'part2_sorted.txt' file
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+———————————————————————————————-
 
 
 Create a class that creates and fills the file 'part2.txt' with random whole numbers from 0 to 50 (10 numbers in total), then reads the file and writes its content to the other file ('part2_sorted.txt') having sorted the numbers in the ascending order.
@@ -49,24 +49,24 @@ Display the content of both the input and output files in the console.
 
 Example of the console output
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+————————————————————————-
 
 input ==> 30 23 16 16 9 23 3 18 21 29 
 output ==> 3 9 16 16 18 21 23 23 29 30
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+————————————————————————-
 
 
 _______________________
 
 Task 3
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+———————————————————————————————-
 
 Class name: com.epam.rd.java.basic.practice4.Part3
 The input data should be uploaded from the 'part3.txt' file
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+———————————————————————————————-
 
 
 The file contains characters, whole numbers and floating point numbers. Write a class that has the following functionality: in a loop, a user enters the data type (one of them: char, int, double, String), in response, the application prints out to the console all the values of the corresponding types that exist in the file. If a user enters the word 'stop', then the application exits the loop. In other cases "Incorrect input" should be printed.
@@ -77,23 +77,23 @@ Characters - Latin or Cyrillic letters letters in upper or lower case (make sure
 
 Example of the original file:
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+————————————————————————-
 
-a bcd 43.43 432 Ğ¸ Ğ» Ñ„Ğ²Ñ‹Ğ° 89 .98
+a bcd 43.43 432 è ë ôâûà 89 .98
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+————————————————————————-
 
 
 _______________________
 
 Task 4
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+———————————————————————————————-
 
 Class name: com.epam.rd.java.basic.practice4.Part4
 The input data should be uploaded from the 'part4.txt' file
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+———————————————————————————————-
 
 
 Create a class that implements interface java.lang.Iterable<String>. The class should parse the text file and return sentences. The method 'iterator' of the given class should return the iterator object - an instance of the inner class. The method Iterator#remove should throw an exception UnsupportedOperationException.
@@ -107,37 +107,37 @@ _______________________
 
 Task 5
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+———————————————————————————————-
 
 Class name: com.epam.rd.java.basic.practice4.Part5
 The input resource package, ru locale: resources_ru.properties
 The input resource package, en locale: resources_en.properties
 The resource packages are to be placed in the src/main catalog.
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+———————————————————————————————-
 
 
 Create resource packages (.properties files) for two locales: ru and en. The packages should contain at least two records.
 
 Example of the resources_en.properties content
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+————————————————————————-
 
 table = table 
 apple = apple
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+————————————————————————-
 
 
 
 Example of the resources_ru.properties content
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+————————————————————————-
 
-table = ÑÑ‚Ğ¾Ğ» 
-apple = ÑĞ±Ğ»Ğ¾ĞºĞ¾
+table = ñòîë 
+apple = ÿáëîêî
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+————————————————————————-
 
 
 Write a class that in a loop reads the key and the localization name from the console and, in response, prints out the corresponding value to the console. The sign of the input end is the word 'stop'.
@@ -148,12 +148,12 @@ _______________________
 
 Task 6
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+———————————————————————————————-
 
 Class name: com.epam.rd.java.basic.practice4.Part6
 The input file - 'part6.txt'
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+———————————————————————————————-
 
 
 The file contains words written with Cyrillic and Latin letters.
@@ -164,30 +164,30 @@ In other cases program prints "Incorrect input".
 
 Example of the input file:
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+————————————————————————-
 
 Is there anybody going to listen to my story 
-Ğ›ÑĞ³Ğ°Ñ” Ğ´ĞµĞ½ÑŒ. Ğ’Ñ–Ğ½ Ğ²Ñ–Ğ´Ğ´Ğ°Ñ” ÑĞ²Ğ¾Ñ— Ğ½Ğ°Ğ´Ñ–Ñ— Ğ½Ğ¾Ñ‡Ñ–. 
-Ğ Ğ¾Ğ±Ñ–Ñ‚Ğ½Ğ¸ĞºĞ¸ 
-Ğ—Ğ°Ğ¼Ğ¾Ñ€Ğ¸Ğ»Ğ¸ÑÑŒ Ğ¿Ñ€Ğ°Ñ†ÑĞ²Ğ°Ñ‚Ğ¸. 
-Ğ¡ Ğ±Ğ°Ñ€Ğ°Ğ±Ğ°Ğ½Ğ¾Ğ¼ Ñ…Ğ¾Ğ´Ğ¸Ñ‚ Ñ‘Ğ¶Ğ¸Ğº. Ğ‘ÑƒĞ¼-Ğ±ÑƒĞ¼-Ğ±ÑƒĞ¼.
+Ëÿãàº äåíü. Â³í â³ääàº ñâî¿ íàä³¿ íî÷³. 
+Ğîá³òíèêè 
+Çàìîğèëèñü ïğàöşâàòè. 
+Ñ áàğàáàíîì õîäèò ¸æèê. Áóì-áóì-áóì.
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+————————————————————————-
 
 
 Example of the console output:
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+————————————————————————-
 
 asdf<Enter> 
 asdf: Incorrect input 
 Latn<Enter> 
 Latn: Is there anybody going to listen to my story 
 Cyrl<Enter> 
-Cyrl: Ğ›ÑĞ³Ğ°Ñ” Ğ´ĞµĞ½ÑŒ Ğ’Ñ–Ğ½ Ğ²Ñ–Ğ´Ğ´Ğ°Ñ” ÑĞ²Ğ¾Ñ— Ğ½Ğ°Ğ´Ñ–Ñ— Ğ½Ğ¾Ñ‡Ñ– Ğ Ğ¾Ğ±Ñ–Ñ‚Ğ½Ğ¸ĞºĞ¸ Ğ—Ğ°Ğ¼Ğ¾Ñ€Ğ¸Ğ»Ğ¸ÑÑŒ Ğ¿Ñ€Ğ°Ñ†ÑĞ²Ğ°Ñ‚Ğ¸ Ğ¡ Ğ±Ğ°Ñ€Ğ°Ğ±Ğ°Ğ½Ğ¾Ğ¼ Ñ…Ğ¾Ğ´Ğ¸Ñ‚ Ñ‘Ğ¶Ğ¸Ğº Ğ‘ÑƒĞ¼ Ğ±ÑƒĞ¼ Ğ±ÑƒĞ¼ 
+Cyrl: Ëÿãàº äåíü Â³í â³ääàº ñâî¿ íàä³¿ íî÷³ Ğîá³òíèêè Çàìîğèëèñü ïğàöşâàòè Ñ áàğàáàíîì õîäèò ¸æèê Áóì áóì áóì 
 stop
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+————————————————————————-
 
 
 
@@ -204,7 +204,7 @@ In case the application freezes expecting the console input, it will stop runnin
 
 Stub method of Demo.main
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+————————————————————————-
 
 package com.epam.rd.java.basic.practice4;
 
@@ -252,4 +252,4 @@ public class Demo {
     }
 }
 
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”-
+————————————————————————-
